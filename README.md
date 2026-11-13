@@ -34,6 +34,7 @@ Ký hiệu: ⬜ chưa bắt đầu · ⏳ đang học · ✅ đạt đầu ra ·
 
 ```
 ROADMAP.md        lộ trình đầy đủ (nguồn sự thật)
+docs/             tài liệu đọc + bài tập theo tuần, Claude soạn
 sessions/         nhật ký từng buổi học với Claude — YYYY-MM-DD-wNN-<chu-de>.md
 notes/            ghi chú kiến thức theo chủ đề, viết bằng lời của mình
 flashcards/       câu hỏi ôn tập, import vào Anki (TSV: front<TAB>back)

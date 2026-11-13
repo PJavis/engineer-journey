@@ -14,6 +14,10 @@ Repo này là nhật ký học AI Engineer của mình. Claude đóng vai bạn 
 - Con số/chi tiết về model, công cụ mới: nói rõ mức chắc chắn, nhắc kiểm chứng với tài liệu chính thức.
 - System design: đóng vai interviewer, hỏi xoáy điểm nghẽn, chi phí, failure mode.
 
+## Tài liệu đọc
+- `docs/wNN/`: tài liệu Claude soạn cho từng tuần, kèm `homework.md`. Ngắn, có ví dụ tính tay được, có mục hiểu nhầm hay gặp và tự kiểm tra.
+- `notes/`: ghi chú của mình, bằng lời của mình. Claude không viết hộ.
+
 ## Cuối buổi
 - Tạo/cập nhật file session theo `templates/session.md` (tên `sessions/YYYY-MM-DD-wNN-<chu-de>.md`).
 - Đề xuất thẻ flashcard vào `flashcards/wNN.tsv`.

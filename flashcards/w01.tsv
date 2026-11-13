@@ -1,1 +1,15 @@
 front	back
+Token ID có mang nghĩa không?	Không. Chỉ là số thứ tự trong vocabulary. Nghĩa nằm ở embedding vector tra từ ID.
+Q, K, V trong attention là gì?	Mỗi token tự sinh: Query = tôi tìm gì; Key = tôi chứa gì; Value = thông tin tôi đưa nếu được chọn. Output = trung bình các V theo trọng số softmax(Q·K/√d).
+Vì sao chia √d trong attention?	Dimension lớn → tích vô hướng lớn → softmax dồn về một phần tử → gradient gần 0.
+Embedding tĩnh khác vector sau attention thế nào?	Embedding giống nhau trong mọi câu (tra bảng). Attention trộn thông tin từ token khác → vector theo ngữ cảnh.
+T nhỏ / T lớn làm phân phối thế nào?	T nhỏ → nhọn (T→0 = argmax). T lớn → phẳng, đa dạng hơn nhưng dễ chọn token đuôi → dễ sai.
+T = 0 có deterministic không?	Không tuyệt đối. Floating-point trên GPU lệch nhỏ + logit gần bằng nhau → lật argmax → lệch dây chuyền.
+Top-p = 0.9 nghĩa là gì?	Xếp token theo xác suất giảm dần, giữ tập nhỏ nhất có tổng cộng dồn ≥ 0.9, bỏ phần đuôi, chuẩn hoá lại rồi sample.
+Top-p khác temperature thế nào?	Temperature bóp méo cả phân phối, không loại token nào. Top-p cắt đuôi, số token giữ lại tự co giãn theo độ chắc chắn của model.
+Vì sao tiếng Việt tốn token hơn tiếng Anh?	BPE học từ dữ liệu chủ yếu tiếng Anh; ký tự có dấu tốn nhiều byte UTF-8; tiếng Việt viết theo âm tiết.
+KV cache là gì?	Causal attention → K, V của token cũ không đổi → lưu lại, token mới chỉ tính phần của nó. Đổi lại tốn VRAM theo độ dài context.
+Quy tắc sắp xếp prompt để tận dụng prompt caching?	Phần ổn định (system, tool, tài liệu) lên trước; phần thay đổi (timestamp, câu hỏi) xuống cuối. Đổi một token đầu → mất cache phía sau.
+Vì sao "thích" và "không thích" có cosine similarity cao?	Embedding bắt chủ đề và từ vựng chung, kém ở phủ định, con số, mã định danh. Khắc phục: hybrid search (BM25) + reranker.
+Gốc rễ của hallucination?	Model học dự đoán token hợp lý tiếp theo, không có bước kiểm tra "mình có biết không". Trôi chảy ≠ đúng.
+Lost in the middle là gì?	Thông tin ở giữa context dài được dùng kém hơn ở đầu và cuối. Đặt phần quan trọng ở đầu/cuối, câu hỏi sau tài liệu.

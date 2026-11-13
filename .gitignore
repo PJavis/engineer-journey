@@ -1,0 +1,32 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*key*.json
+
+# data — không commit dữ liệu thật
+data/
+*.parquet
+*.csv.gz
+project/**/raw/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# models / artifacts
+*.safetensors
+*.gguf
+*.bin
+checkpoints/
+wandb/
+mlruns/
+
+# os / editor
+.DS_Store
+.idea/
+.vscode/
